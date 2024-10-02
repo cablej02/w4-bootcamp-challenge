@@ -3,13 +3,18 @@ const toggleEl = document.querySelector('#toggle');
 const bodyEl = document.querySelector('body');
 
 let mode = localStorage.getItem('mode') || 'light';
-bodyEl.setAttribute('class', mode);
+handleDisplayToggle();
 
 toggleEl.addEventListener('click',() =>{
   mode = mode === 'dark' ? 'light' : 'dark';
-  bodyEl.setAttribute('class', mode);
+  handleDisplayToggle();
   localStorage.setItem('mode', mode);
 });
+
+function handleDisplayToggle(){
+  bodyEl.setAttribute('class', mode);
+  mode === 'dark' ? toggleEl.textContent = '🌙' : toggleEl.textContent = '☀️';
+}
 
 // Create a function called `readLocalStorage` that reads from local storage and returns the data. If no data exists, return an empty array.
 const readLocalStorage = function () {
