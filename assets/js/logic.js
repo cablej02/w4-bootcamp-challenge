@@ -1,5 +1,15 @@
-// TODO: Create logic to toggle the light/dark mode styles for the page and circle. The mode should be saved to local storage.
+// Create logic to toggle the light/dark mode styles for the page and circle. The mode should be saved to local storage.
+const toggleEl = document.querySelector('#toggle');
+const bodyEl = document.querySelector('body');
 
+let mode = localStorage.getItem('mode') || 'light';
+bodyEl.setAttribute('class', mode);
+
+toggleEl.addEventListener('click',() =>{
+  mode = mode === 'dark' ? 'light' : 'dark';
+  bodyEl.setAttribute('class', mode);
+  localStorage.setItem('mode', mode);
+});
 
 // Create a function called `readLocalStorage` that reads from local storage and returns the data. If no data exists, return an empty array.
 const readLocalStorage = function () {
