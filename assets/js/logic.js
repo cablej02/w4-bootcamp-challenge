@@ -13,7 +13,13 @@ toggleEl.addEventListener('click',() =>{
 
 function handleDisplayToggle(){
   bodyEl.setAttribute('class', mode);
-  mode === 'dark' ? toggleEl.textContent = '🌙' : toggleEl.textContent = '☀️';
+  if (mode === 'dark'){
+    document.querySelector(':root').style.setProperty('--circle-color', 'purple');
+    toggleEl.textContent = '🌙';
+  } else {
+    document.querySelector(':root').style.setProperty('--circle-color', '#ffb100');
+    toggleEl.textContent = '☀️';
+  }
 }
 
 // Create a function called `readLocalStorage` that reads from local storage and returns the data. If no data exists, return an empty array.

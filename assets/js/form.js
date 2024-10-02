@@ -6,10 +6,8 @@ const contentEl = document.querySelector('#content');
 const errorEl = document.querySelector('#error');
 const submitEl = document.querySelector('#submit');
 
-
-
 // Create a function that handles the form submission. Grab the form data and store it in local storage, then redirect to the blog page using the `redirectPage` function. If the form is submitted with missing data, display an error message to the user.
-const handleFormSubmit = (event) => {
+const handleFormSubmit = function(event) {
     // Prevent the default action of submitting the form
     event.preventDefault();
   
@@ -30,8 +28,7 @@ const handleFormSubmit = (event) => {
     storeLocalStorage(formObj);
 
     // Redirect to the blog page
-    redirectPage('./blog.html');
-
+    redirectPage('blog.html');
 }
 
 // Add an event listener to the form on submit. Call the function to handle the form submission.
