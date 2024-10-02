@@ -13,22 +13,23 @@ const handleFormSubmit = function (event) {
     // Prevent the default action of submitting the form
     event.preventDefault();
   
-    // Check if the form fields are empty
-    if (!usernameEl.value || !titleEl.value || !contentEl.value) {
-        errorEl.textContent = 'Please complete the form.';
-        return;
-    }
+    //TODO: uncomment everything below to take inputs and save once blog page is created
+    // // Check if the form fields are empty
+    // if (!usernameEl.value || !titleEl.value || !contentEl.value) {
+    //     errorEl.textContent = 'Please complete the form.';
+    //     return;
+    // }
 
-    // Create an object to store the form values
-    const formObj = {
-        username: usernameEl.value,
-        title: titleEl.value,
-        content: contentEl.value
-    };
+    // // Create an object to store the form values
+    // const formObj = {
+    //     username: usernameEl.value,
+    //     title: titleEl.value,
+    //     content: contentEl.value
+    // };
 
-    // Store the form object in local storage
-    //TODO: Uncomment the following line to store the form object in local storage
-    //storeLocalStorage(formObj);
+    // // Store the form object in local storage
+    // // TODO: Uncomment the following line to store the form object in local storage
+    // storeLocalStorage(formObj);
 
     // Redirect to the blog page
     redirectPage('./blog.html');
