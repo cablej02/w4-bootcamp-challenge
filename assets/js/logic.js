@@ -31,6 +31,7 @@ const readLocalStorage = function () {
   if (data === null) {
     return [];
   }
+  console.log(JSON.parse(data));
 
   // Return the data as an array
   return JSON.parse(data);
